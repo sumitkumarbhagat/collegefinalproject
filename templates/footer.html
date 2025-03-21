@@ -1,0 +1,81 @@
+<!-- Footer Section Begin -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__about">
+                    <div class="footer__logo">
+                        <a href="{{url_for('index')}}"><img src="{{ url_for('static', filename='img/logo.png') }}" alt=""></a>
+                    </div>
+                    <p>The customer is at the heart of our unique business model.</p>
+
+                </div>
+            </div>
+            <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                <div class="footer__widget">
+                    <h6>Shopping</h6>
+                    <ul>
+                        <li><a href="{{url_for('shop')}}">Clothing Store</a></li>
+                        <li><a href="{{url_for('shop')}}">Trending Shoes</a></li>
+                        <li><a href="{{url_for('shop')}}">Accessories</a></li>
+                        <li><a href="{{url_for('shop')}}">Sale</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-6">
+                <div class="footer__widget">
+                    <h6>Shopping</h6>
+                    <ul>
+                        <li><a href="{{url_for('contact')}}">Contact Us</a></li>
+                        <li><a href="{{url_for('about')}}">About Us</a></li>
+                        <li><a href="{{url_for('faq')}}">Facts And Questions</a></li>
+                        <li><a href="{{url_for('contact')}}">Have a question?</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="footer__copyright__text">
+                    <
+                    <p>Copyright ©
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved | The Ma Manasa Garments
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Search Begin -->
+<div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch">+</div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Search here.....">
+        </form>
+    </div>
+</div>
+<!-- Search End -->
+
+<!-- Js Plugins -->
+<script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.nice-select.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.nicescroll.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.countdown.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.slicknav.js') }}"></script>
+<script src="{{ url_for('static', filename='js/mixitup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

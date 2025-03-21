@@ -1,0 +1,165 @@
+{%include 'header.html'%}
+
+<!-- Hero Section Begin -->
+<section class="hero">
+    <div class="hero__slider owl-carousel owl-loaded owl-drag">
+        <div class="owl-stage-outer">
+            <div class="owl-stage" style="transform: translate3d(-6332px, 0px, 0px); transition: all 0s ease 0s; width: 25328px;">
+
+                <!-- Men Collections Slide -->
+                <div class="owl-item cloned" style="width: 1583px;">
+                    <div class="hero__items set-bg" data-setbg="static/img/hero/hero-1.png" style="background-image: url('static/img/hero/hero-1.png');">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-5 col-lg-7 col-md-8">
+                                    <div class="hero__text">
+                                        <h6>Men's Collection</h6>
+                                        <h2>Men's Collections 2024</h2>
+                                        <p>Discover our latest collection for men, featuring stylish and versatile pieces that redefine contemporary fashion. Crafted with premium materials and designed to offer both comfort and elegance.</p>
+                                        <a href="{{ url_for('shop', category='Men') }}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Women Collections Slide -->
+                <div class="owl-item cloned" style="width: 1583px;">
+                    <div class="hero__items set-bg" data-setbg="static/img/hero/hero-2.png" style="background-image: url('static/img/hero/hero-2.png');">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-5 col-lg-7 col-md-8">
+                                    <div class="hero__text">
+                                        <h6>Women's Collection</h6>
+                                        <h2>Women's Collections 2024</h2>
+                                        <p>Explore our new women's collection, offering a blend of timeless sophistication and modern trends. Each piece is designed to enhance your wardrobe with elegance and flair.</p>
+                                        <a href="{{ url_for('shop', category='Women') }}" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="owl-nav">
+            <button type="button" role="presentation" class="owl-prev"><span class="arrow_left"><span></span></span></button>
+            <button type="button" role="presentation" class="owl-next"><span class="arrow_right"><span></span></span></button>
+        </div>
+        <div class="owl-dots disabled"></div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+
+   <!-- Banner Section Begin -->
+<section class="banner spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 offset-lg-5">
+                <div class="banner__item">
+                    <div class="banner__item__pic">
+                        <img src="static/img/banner/banner-1.png" height="500" width="400" alt="Men's Collection 2024">
+                    </div>
+                    <div class="banner__item__text">
+                        <h2>Men's Collection 2024</h2>
+                        <a href="{{ url_for('shop', category='Men') }}">Shop now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="banner__item banner__item--middle">
+                    <div class="banner__item__pic">
+                        <img src="static/img/banner/banner-3.jpg" height="400" width="400" alt="Footwear Collection 2024">
+                    </div>
+                    <div class="banner__item__text">
+                        <h2>Footwear Collection 2024</h2>
+                        <a href="{{ url_for('shop', category='Shoes') }}">Shop now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="banner__item banner__item--last">
+                    <div class="banner__item__pic">
+                        <img src="static/img/banner/banner-2.png" height="500" width="400" alt="Women's Collection 2024">
+                    </div>
+                    <div class="banner__item__text">
+                        <h2>Women's Collection 2024</h2>
+                        <a href="{{ url_for('shop', category='Women') }}">Shop now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Banner Section End -->
+
+
+
+
+    <!-- Categories Section Begin -->
+    <section class="categories spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="categories__text">
+                        <h2>Clothing Hot <br> <span>Men's Collection</span> <br> Accessories</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="categories__hot__deal">
+                        <img src="static/img/product-sales.png" alt="">
+                        <div class="hot__deal__sticker">
+                            <span>Sale Of</span>
+                            <h5>₹ 299</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1">
+                    <div class="categories__deal__countdown">
+                        <span>Deal Of The Week</span>
+                        <h2>Multi-Color Graphic T-Shirt</h2>
+                        <div class="categories__deal__countdown__timer" id="countdown"><div class="cd-item"><span>30</span> <p>Days</p> </div><div class="cd-item"><span>11</span> <p>Hours</p> </div><div class="cd-item"><span>21</span> <p>Minutes</p> </div><div class="cd-item"><span>33</span> <p>Seconds</p> </div></div>
+                        <a href="{{ url_for('shop', category='Men') }}" class="primary-btn">Shop now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+
+    <!-- Instagram Section Begin -->
+    <section class="instagram spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="instagram__pic">
+                        <div class="instagram__pic__item set-bg" data-setbg="static/img/instagram/instagram-1.jpg" style="background-image: url(&quot;static/img/instagram/instagram-1.jpg&quot;);"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="static/img/instagram/instagram-2.jpg" style="background-image: url(&quot;static/img/instagram/instagram-2.jpg&quot;);"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="static/img/instagram/instagram-3.jpg" style="background-image: url(&quot;static/img/instagram/instagram-3.jpg&quot;);"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="static/img/instagram/instagram-4.jpg" style="background-image: url(&quot;static/img/instagram/instagram-4.jpg&quot;);"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="static/img/instagram/instagram-5.jpg" style="background-image: url(&quot;static/img/instagram/instagram-5.jpg&quot;);"></div>
+                        <div class="instagram__pic__item set-bg" data-setbg="static/img/instagram/instagram-6.jpg" style="background-image: url(&quot;static/img/instagram/instagram-6.jpg&quot;);"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="instagram__text">
+                        <a href="https://www.instagram.com" target="_blank"><h2>Instagram</h2></a>
+                        <p>"Bringing Premium Fashion to Your Doorstep: Experience Hassle-Free Shopping with Free Delivery and Easy Replacements Across India!"</p>
+                        <h3>#THE_MMG</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Instagram Section End -->
+<br>
+<br>
+<br>
+<br>
+
+
+
+{%include 'footer.html'%}

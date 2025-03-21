@@ -1,0 +1,19 @@
+{% include 'header.html' %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+<div>
+    {% for product in products %}
+    <div class="product-container">
+        <h4 class="product-title">
+            {{ product.title }}  - Rs.{{ product.price }}
+            <a href="{{ url_for('delete', id=product.id) }}" class="delete-link">Delete</a>
+        </h4>
+        <p class="product-info">{{ product.product_info }}</p>
+    </div>
+    {% endfor %}
+</div>
+<div>
+    <a href="{{url_for('logout')}}">Logout</a>
+</div>
+
+{% include 'footer.html' %}

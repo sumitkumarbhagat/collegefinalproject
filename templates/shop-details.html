@@ -1,0 +1,143 @@
+{% include "header.html" %}
+
+<div class="container mt-5 mb-5 product-details">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="row">
+                    <!-- Images Section -->
+                    <div class="col-md-6">
+                        <div class="images p-3">
+                            <!-- Main Image -->
+                            <div class="text-center p-4">
+                                <img id="main-image" src="{{product.imgUrl1}}" class="img-fluid" />
+                            </div>
+                            <!-- Thumbnail Slider -->
+                            <div class="swiper-container thumbnail-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img onclick="change_image(this)" src="{{product.imgUrl2}}" class="img-fluid" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img onclick="change_image(this)" src="{{product.imgUrl3}}" class="img-fluid" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img onclick="change_image(this)" src="{{product.imgUrl4}}" class="img-fluid" />
+                                    </div>
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Details Section -->
+                    <div class="col-md-6">
+                        <div class="product p-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <a href="{{ url_for('shop') }}" class="back-link">
+                                        <i class="fa fa-long-arrow-left"></i>
+                                        <span class="ml-1">Back</span>
+                                    </a>
+                                </div>
+                                <i class="fa fa-shopping-cart text-muted"></i>
+                            </div>
+                            <div class="mt-4 mb-3">
+                                <span class="text-uppercase text-muted brand">THE MMG's</span>
+                                <h5 class="text-uppercase">{{product.title}}</h5>
+                                <div class="price d-flex flex-row align-items-center">
+                                    <span class="act-price">₹ {{product.price}}</span>
+                                    <div class="ml-2">
+                                        <small class="dis-price">₹ {{product.original_price}}</small>
+                                        <span class="discount-percentage"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="about">{{product.productInfo}}</p>
+                            <div class="sizes mt-5">
+                                <p><span class="font-weight-bold">Sizes Available: {{product.sizes}}</span></p>
+                            </div>
+                            <div class="sizes mt-4">
+                                <p><span class="font-weight-bold">Colors Available: {{product.colors}}</span></p>
+                            </div>
+                            <div class="sizes mt-4">
+                                <p><span class="font-weight-bold">Category: {{product.category}}</span></p>
+                            </div>
+                            <div class="cart mt-4 align-items-center">
+                                <button id="whatsapp-button" class="btn btn-danger text-uppercase mr-2 px-4">Order via WhatsApp</button>
+                                <i id="share-button" class="fa fa-share-alt text-muted"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "footer.html" %}
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    function change_image(image) {
+        var container = document.getElementById("main-image");
+        container.src = image.src;
+    }
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var swiper = new Swiper('.thumbnail-slider', {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        // Calculate and display the discount percentage
+        const currentPrice = {{product.price}};
+        const originalPrice = {{product.original_price}};
+        const discountPercentage = Math.round(((originalPrice - currentPrice) / originalPrice) * 100);
+        document.querySelector('.discount-percentage').innerText = discountPercentage > 0 ? `${discountPercentage}% OFF` : 'No Discount';
+
+        // WhatsApp Button Click Event
+        document.getElementById("whatsapp-button").addEventListener("click", function() {
+            const productTitle = "{{product.title}}";
+            const productInfo = "{{product.productInfo}}";
+            const productPrice = "{{product.price}}";
+            const whatsappMessage = `I'm interested in buying the following product:\n\nProduct: ${productTitle}\nPrice: ₹${productPrice}\nDetails: ${productInfo}`;
+            const whatsappURL = `https://wa.me/+917000268644?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Share Button Click Event
+        document.getElementById("share-button").addEventListener("click", function() {
+            const productTitle = "{{product.title}}";
+            const productInfo = "{{product.productInfo}}";
+            const productPrice = "{{product.price}}";
+            const shareMessage = `Check out this product:\n\nProduct: ${productTitle}\nPrice: ₹${productPrice}\nDetails: ${productInfo}`;
+            if (navigator.share) {
+                navigator.share({
+                    title: productTitle,
+                    text: shareMessage,
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                }).catch(console.error);
+            } else {
+                alert("Your browser does not support the Web Share API.");
+            }
+        });
+    });
+</script>
